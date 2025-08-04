@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+
+/* Your custom CSS rules go below */
+@property --tw-space-y-reverse {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0;
+}
+
+/* Rest of your custom CSS */
+body {
+  font-family: 'Nunito', sans-serif;
+}
