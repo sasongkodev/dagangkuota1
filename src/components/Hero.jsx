@@ -12,6 +12,11 @@ import {
 } from "lucide-react";
 
 const HeroSection = () => {
+  // --- Variabel Nomor WhatsApp ---
+  // Ganti nomor di sini jika ada perubahan
+  const WHATSAPP_NUMBER = "+6288216379780";
+  // --- Akhir Variabel Nomor WhatsApp ---
+
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const products = [
@@ -170,8 +175,12 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-md mx-auto">
+          {/* Tombol Pesan via WhatsApp diperbarui */}
           <a
-            href="https://wa.me/62XXXXXXXXXX?text=Halo%20saya%20mau%20beli%20kuota"
+            href={`https://wa.me/${WHATSAPP_NUMBER.replace(
+              /\D/g,
+              ""
+            )}?text=Halo%20saya%20mau%20beli%20kuota`}
             target="_blank"
             rel="noopener noreferrer"
             className="relative overflow-hidden bg-gradient-to-r from-violet-600 to-indigo-600 text-white px-7 py-4 rounded-full font-medium text-center hover:opacity-90 transition"
