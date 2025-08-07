@@ -1,4 +1,3 @@
-// Footer.jsx
 import { useState } from "react";
 import {
   Wifi,
@@ -6,21 +5,22 @@ import {
   Mail,
   Phone,
   MapPin,
-  Facebook,
-  Youtube,
   Send,
   Shield,
   Zap,
   CreditCard,
+  Youtube,
+  Instagram,
+  MessageCircle,
+  Radio,
 } from "lucide-react";
 
 const Footer = () => {
-  // --- Variabel Nomor WhatsApp & Informasi Kontak ---
-  // Ganti nomor/informasi di sini jika ada perubahan
+  // --- Variabel Informasi Kontak ---
   const WHATSAPP_NUMBER = "+6288216379780";
   const EMAIL = "support@dagangkuota.com";
   const PHONE = "+62 882-1637-9780";
-  const ADDRESS = "Jl. Teknologi No. 123, Jakarta Selatan";
+  const ADDRESS = "Sedayu, Yogyakarta";
   // --- Akhir Variabel Informasi Kontak ---
 
   const menuLinks = [
@@ -41,20 +41,28 @@ const Footer = () => {
     { title: "PPOB", href: "#ppob" },
   ];
 
+  // Social Media dengan icon dan link yang diperbarui
   const socialMedia = [
-    {
-      name: "Facebook",
-      icon: <Facebook className="w-5 h-5" />,
-      url: "https://www.facebook.com/dagangkuota", // Ganti dengan URL Facebook Anda
-      color: "hover:bg-blue-600",
-      bgColor: "bg-blue-500",
-    },
     {
       name: "YouTube",
       icon: <Youtube className="w-5 h-5" />,
-      url: "https://www.youtube.com/@dagangkuota", // Ganti dengan URL YouTube Anda
+      url: "https://youtube.com/@dagang_kuota_nusantara",
       color: "hover:bg-red-600",
       bgColor: "bg-red-500",
+    },
+    {
+      name: "Instagram",
+      icon: <Instagram className="w-5 h-5" />,
+      url: "https://www.instagram.com/@dagang_kuota_nusantara",
+      color: "hover:bg-pink-600",
+      bgColor: "bg-gradient-to-r from-purple-500 to-pink-500",
+    },
+    {
+      name: "TikTok",
+      icon: <Radio className="w-5 h-5" />,
+      url: "https://www.tiktok.com/@dagang_kuota_nusantara",
+      color: "hover:bg-black",
+      bgColor: "bg-black",
     },
     {
       name: "Telegram",
@@ -63,20 +71,16 @@ const Footer = () => {
           <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.14.141-.259.259-.374.261l.213-3.053 5.56-5.022c.24-.213-.054-.334-.373-.121l-6.869 4.326-2.96-.924c-.64-.203-.658-.64.136-.954l11.566-4.458c.538-.196 1.006.128.832.941z" />
         </svg>
       ),
-      url: "https://t.me/dagangkuota", // Ganti dengan URL Telegram Anda
+      url: "https://t.me/infodagangkuota",
       color: "hover:bg-blue-400",
       bgColor: "bg-blue-400",
     },
     {
-      name: "TikTok",
-      icon: (
-        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" />
-        </svg>
-      ),
-      url: "https://www.tiktok.com/@dagangkuota", // Ganti dengan URL TikTok Anda
-      color: "hover:bg-black",
-      bgColor: "bg-black",
+      name: "WhatsApp Channel",
+      icon: <MessageCircle className="w-5 h-5" />,
+      url: "https://whatsapp.com/channel/0029Vb5oJKf8F2pKu4oJeW0Y",
+      color: "hover:bg-green-600",
+      bgColor: "bg-green-500",
     },
   ];
 
@@ -90,6 +94,10 @@ const Footer = () => {
     )}?text=${encodeURIComponent(fullMessage)}`;
   };
 
+  // Direct link ke logo di Dropbox (sama dengan di navbar)
+  const logoUrl =
+    "https://www.dropbox.com/scl/fi/cmqm7tgjt8waxn3nuwld0/react.svg?rlkey=9sabvj5oeu7o95bcij1msev58&st=obgoy1zl&raw=1";
+
   return (
     <footer className="bg-gray-900 text-white pt-16 pb-8 px-4 md:px-8 lg:px-16">
       <div className="max-w-7xl mx-auto">
@@ -97,15 +105,21 @@ const Footer = () => {
           {/* Brand & Description */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-6">
-              <div className="bg-gradient-to-r from-violet-600 to-blue-500 p-2 rounded-lg mr-3">
-                <Wifi className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-extrabold">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-blue-400">
+              <a
+                href="#beranda"
+                className="flex items-center text-2xl font-extrabold text-violet-600 font-nunito hover:text-violet-700 transition focus:outline-none focus:ring-2 focus:ring-violet-500 rounded-lg"
+                aria-label="Beranda DagangKuota"
+              >
+                <img
+                  src={logoUrl}
+                  alt="Logo DagangKuota"
+                  className="h-8 w-auto mr-2"
+                />
+                <span className="bg-gradient-to-r from-violet-600 to-indigo-600 text-transparent bg-clip-text">
                   Dagang
                 </span>
                 <span className="text-white">Kuota</span>
-              </span>
+              </a>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
               Solusi digital terpercaya untuk kebutuhan pulsa, kuota, dan
@@ -119,7 +133,7 @@ const Footer = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${social.bgColor} ${social.color} text-white p-3 rounded-full transition duration-300 transform hover:scale-110`}
+                  className={`${social.bgColor} ${social.color} text-white p-3 rounded-full transition duration-300 transform hover:scale-110 flex items-center justify-center`}
                   aria-label={social.name}
                 >
                   {social.icon}
