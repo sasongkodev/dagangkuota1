@@ -41,6 +41,18 @@ const Navbar = () => {
     { label: "Kontak", href: "#kontak" },
   ];
 
+  // Fungsi untuk membuat link WhatsApp yang benar
+  const getWhatsAppLink = () => {
+    return `https://wa.me/${WHATSAPP_NUMBER.replace(
+      /\D/g,
+      ""
+    )}?text=Halo%20saya%20mau%20beli%20kuota`;
+  };
+
+  // Direct link ke logo di Dropbox
+  const logoUrl =
+    "https://www.dropbox.com/scl/fi/cmqm7tgjt8waxn3nuwld0/react.svg?rlkey=9sabvj5oeu7o95bcij1msev58&st=obgoy1zl&raw=1";
+
   return (
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
@@ -50,16 +62,23 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
-        {/* Logo */}
+        {/* Logo dengan Gambar dari URL */}
         <div className="flex items-center">
           <a
             href="#beranda"
-            className="text-2xl font-extrabold text-violet-600 font-nunito hover:text-violet-700 transition flex items-center"
+            className="flex items-center text-2xl font-extrabold text-violet-600 font-nunito hover:text-violet-700 transition"
           >
+            {/* Menampilkan logo dari URL Dropbox */}
+            <img
+              src={logoUrl}
+              alt="Logo DagangKuota"
+              className="h-8 w-auto mr-2"
+              // onError={(e) => { e.target.src = '/path/to/fallback-logo.svg'; }} // Optional: fallback jika gambar tidak ditemukan
+            />
             <span className="bg-gradient-to-r from-violet-600 to-indigo-600 text-transparent bg-clip-text">
-              Dagang
+              
             </span>
-            <span className="text-gray-900">Kuota</span>
+           {/* ? <span className="text-gray-900">Kuota</span> */}
           </a>
         </div>
 
@@ -100,10 +119,7 @@ const Navbar = () => {
 
             {/* Tombol WhatsApp diperbarui */}
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER.replace(
-                /\D/g,
-                ""
-              )}?text=Halo%20saya%20mau%20beli%20kuota`}
+              href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-4 py-2 rounded-full transition-all duration-300 font-bold flex items-center gap-2 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
@@ -172,10 +188,7 @@ const Navbar = () => {
 
             {/* Tombol WhatsApp Mobile diperbarui */}
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER.replace(
-                /\D/g,
-                ""
-              )}?text=Halo%20saya%20mau%20beli%20kuota`}
+              href={getWhatsAppLink()}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-4 py-3 rounded-full text-center transition font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg"
