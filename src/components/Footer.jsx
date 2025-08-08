@@ -116,9 +116,9 @@ const Footer = () => {
                   className="h-8 w-auto mr-2"
                 />
                 <span className="bg-gradient-to-r from-violet-600 to-indigo-600 text-transparent bg-clip-text">
-                  Dagang
+                  {/* Dagang */}
                 </span>
-                <span className="text-white">Kuota</span>
+                {/* <span className="text-white">Kuota</span> */}
               </a>
             </div>
             <p className="text-gray-400 mb-6 leading-relaxed">
