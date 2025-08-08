@@ -86,10 +86,10 @@ const Kontak = () => {
     {
       icon: <MapPin className="w-6 h-6 text-green-600" />,
       title: "Alamat",
-      desc: "Jl. Teknologi No. 123, Jakarta Selatan",
+      desc: "Sedayu Yogyakarta",
       action: (
         <a
-          href="https://maps.google.com/?q=Jl. Teknologi No. 123, Jakarta Selatan"
+          href="https://maps.google.com/?q=Jl. Sedayu Yogyakarta"
           target="_blank"
           rel="noopener noreferrer"
           className="mt-3 inline-flex items-center text-green-600 hover:text-green-800 font-medium"
